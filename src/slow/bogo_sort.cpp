@@ -5,13 +5,16 @@ using std::mt19937;
 using std::uniform_int_distribution;
 
 /*
-This is selection sort, one of the most obvious ways to sort a list.
-The idea is incredibly simple: you look for the minimum element, 
-and then swap it into place. Then you look at the remaining elements, 
-find their minimum and swap that into place. And so on. 
+This is bogo sort, the worst possible sorting algorithm known to man.
 
-It has a constant O(n^2) runtime, and cannot be pushed any further than that,
-as it HAS to check every single element even if they may be in sorted order.
+Here's how it works:
+1. Check if the array is sorted.
+2. If it isn't shuffle the array.
+
+It has both the best and worst time complexities possible:
+O(n) in the best case, the array is already sorted and it just checks that
+O(n * n!) on average, because there are n! perumtations and it takes on average n shuffles to get all of them
+O(inf) in the worst case, the RNG never sorts the array
 */
 
 namespace {
