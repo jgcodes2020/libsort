@@ -3,7 +3,9 @@ project(libsort)
 
 
 add_library(sort
-  "src/bubble.cpp"
+  "src/slow/bubble_sort.cpp"
+  "src/slow/selection_sort.cpp"
+  "src/slow/stooge_sort.cpp"
 )
 target_include_directories(sort
   PUBLIC include
