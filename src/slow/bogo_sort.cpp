@@ -37,10 +37,8 @@ namespace libsort {
     while (!is_sorted(list)) {
       // This is a fair shuffle
       for (size_t i = 0; i < list.size(); i++) {
-        size_t swap = rand_size_t(i, list.size() - 1);
-        uint32_t tmp = list[i];
-        list[i] = list[swap];
-        list[swap] = tmp;
+        size_t j = rand_size_t(i, list.size() - 1);
+        swap(list[i], list[j]);
       }
     }
   }

@@ -10,6 +10,8 @@ It's a recursive sorting algorithm with high time complexity, and works like thi
 3. Stooge sort the first 2/3 again.
 
 This recursiveness keeps going untill we're at single elements, at which point we can just compare and swap.
+
+Its time complexity comes out to be O(n^(log(3) / log(3/2))). This is not trivial to derive.
 */
 
 namespace {
@@ -24,9 +26,7 @@ namespace {
     }
     // compare and swap if there are only 2
     if (size == 2 && list[begin] > list[end]) {
-      uint32_t tmp = list[begin];
-      list[begin] = list[end];
-      list[end] = tmp;
+      libsort::swap(list[begin], list[end]);
     }
   }
 }

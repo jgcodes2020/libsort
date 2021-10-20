@@ -6,6 +6,13 @@
 
 namespace libsort {
   using sort_list = std::vector<std::uint32_t>;
+  
+  template<typename T>
+  void swap(T& a, T& b) {
+    T tmp = a;
+    a = b;
+    b = tmp;
+  }
 }
 
 #endif

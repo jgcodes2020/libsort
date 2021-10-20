@@ -22,9 +22,7 @@ namespace libsort {
         // if they're out of order, swap them
         if (list[j] > list[j + 1]) {
           sorted = false;
-          uint32_t tmp = list[j];
-          list[j] = list[j + 1];
-          list[j + 1] = tmp;
+          swap(list[j], list[j + 1]);
         }
       }
       // if the list is somehow already sorted by this point we're done
